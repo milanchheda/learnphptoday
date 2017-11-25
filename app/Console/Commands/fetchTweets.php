@@ -40,13 +40,14 @@ class fetchTweets extends Command
      */
     public function handle()
     {
-        $allTweets = TweetsUrl::orderBy('id', 'asc')->take(10)->get()->pluck('url', 'id')->toArray();
+        $allTweets = TweetsUrl::orderBy('id', 'asc')->where('status', 0)->take(10)->get()->pluck('url', 'id')->toArray();
         $re = '/[0-9]+/';
         foreach ($allTweets as $key => $value) {
             preg_match_all($re, $value, $tweetID);
             $twitterObj = Twitter::getTweet($tweetID[0][0], ['tweet_mode' => 'extended']);
             $tweetArray = [
                 'image_url' => isset($twitterObj->entities->media[0]) ? $twitterObj->entities->media[0]->media_url_https : '',
+                'video_url' => isset($twitterObj->extended_entities->media[0]->video_info) ? $twitterObj->extended_entities->media[0]->video_info->variants[0]->url : '',
                 'text' => $twitterObj->full_text,
                 'name' => $twitterObj->user->name,
                 'screen_name' => $twitterObj->user->screen_name,

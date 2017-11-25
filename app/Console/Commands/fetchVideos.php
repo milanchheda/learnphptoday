@@ -39,7 +39,7 @@ class fetchVideos extends Command
      */
     public function handle()
     {
-        $allVideos = VideoUrl::orderBy('id', 'asc')->take(10)->get()->pluck('url', 'id')->toArray();
+        $allVideos = VideoUrl::orderBy('id', 'asc')->where('status', 0)->take(10)->get()->pluck('url', 'id')->toArray();
         $re = '/[0-9]+/';
         foreach ($allVideos as $key => $value) {
             $videoData = file_get_contents('https://www.youtube.com/oembed?url=' . $value . '&format=json');
