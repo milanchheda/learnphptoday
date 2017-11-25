@@ -26,7 +26,7 @@ class HomeController extends Controller
     public function index()
     {
         $allVideos = VideosData::orderBy('id', 'asc')->take(4)->get()->toArray();
-        $allTweets = TweetData::orderBy('id', 'asc')->take(3)->get()->toArray();
+        $allTweets = TweetData::orderBy('id', 'asc')->take(4)->get()->toArray();
         $allData = array('videoData' => $allVideos, 'tweetData' => $allTweets);
         return view('welcome')->with($allData);
     }
