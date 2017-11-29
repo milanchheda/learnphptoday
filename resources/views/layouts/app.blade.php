@@ -12,6 +12,13 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <?php
+    if(env('APP_ENV') != 'local') {
+    ?>
+        {!! Analytics::render() !!}
+    <?php
+    }
+    ?>
 </head>
 <body class="bg-grey-lightest font-sans font-normal">
     <div id="app">
@@ -43,5 +50,13 @@
     <!-- Scripts -->
     <script src="//twemoji.maxcdn.com/2/twemoji.min.js?2.3.0"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script>
+      window.addEventListener('load',function(){
+      if(window.location.pathname =="/register/" )
+        {
+          ga('send','event','Learn PHP Today','referrer',document.referrer)
+        }
+      });
+    </script>
 </body>
 </html>
