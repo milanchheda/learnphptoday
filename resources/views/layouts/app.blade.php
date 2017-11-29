@@ -26,10 +26,10 @@
           </div>
           <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
             <div class="text-base lg:flex-grow">
-              <a href="/video-tutorials" class="block cursor-pointer mt-4 lg:inline-block lg:mt-0 text-red-dark hover:text-white mr-4">
+              <a href="/video-tutorials" class="block cursor-pointer mt-4 lg:inline-block lg:mt-0 hover:text-white mr-4 {{ Request::is('video-tutorials') ? 'text-white' : 'text-red-dark' }}">
                 Videos
               </a>
-              <a href="/tweet-snippets" class="block cursor-pointer mt-4 lg:inline-block lg:mt-0 text-red-dark hover:text-white mr-4">
+              <a href="/tweet-snippets" class="block cursor-pointer mt-4 lg:inline-block lg:mt-0 hover:text-white mr-4 {{ Request::is('tweet-snippets') ? 'text-white' : 'text-red-dark' }}">
                 Tweet Snippets
               </a>
             </div>
@@ -38,7 +38,7 @@
         @yield('content')
     </div>
     <div class="bg-grey-lighter text-center py-4 px-4 border-t-2 border-solid border-grey">
-      Made with <span class="text-red-dark pl-1 pr-1">❤</span> by <a class="inline-block text-red-dark no-underline" href='https://twitter.com/milanchheda' target="_BLANK">@milanchheda</a>
+      Made with <span class="text-red-dark pl-1 pr-1 text-lg">❤</span> by <a class="inline-block text-red-dark no-underline" href='https://twitter.com/milanchheda' target="_BLANK">@milanchheda</a>
     </div>
     <!-- Scripts -->
     <script src="//twemoji.maxcdn.com/2/twemoji.min.js?2.3.0"></script>

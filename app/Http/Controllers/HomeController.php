@@ -25,20 +25,20 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $allVideos = VideosData::orderBy('id', 'asc')->take(4)->get()->toArray();
-        $allTweets = TweetData::orderBy('id', 'asc')->take(4)->get()->toArray();
+        $allVideos = VideosData::orderBy('id', 'desc')->take(4)->get()->toArray();
+        $allTweets = TweetData::orderBy('id', 'desc')->take(4)->get()->toArray();
         $allData = array('videoData' => $allVideos, 'tweetData' => $allTweets);
         return view('welcome')->with($allData);
     }
 
     public function fetchVideos() {
-        $allVideos = VideosData::orderBy('id', 'asc')->simplePaginate(12);
+        $allVideos = VideosData::orderBy('id', 'desc')->simplePaginate(12);
         $allData = array('videoData' => $allVideos);
         return view('videos')->with($allData);
     }
 
     public function fetchTweets() {
-        $allTweets = TweetData::orderBy('id', 'asc')->simplePaginate(12);
+        $allTweets = TweetData::orderBy('id', 'desc')->simplePaginate(12);
         $allData = array('tweetData' => $allTweets);
         return view('tweets')->with($allData);
     }

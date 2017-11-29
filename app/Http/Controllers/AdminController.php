@@ -19,15 +19,17 @@ class AdminController extends Controller
   	public function store(Request $request) {
   		try {
             if($request->input('url_type') == 'youtube') {
-                $youtubeUrlObj = new VideoUrl();
-                $youtubeUrlObj->url = $request->input('url');
-                $youtubeUrlObj->save();
-                return redirect('admin/dashboard')->with('message', 'Successfully submitted!');
+                $objToSave = new VideoUrl();
             } else if($request->input('url_type') == 'twitter'){
-                $tweetsUrlObj = new TweetsUrl();
-                $tweetsUrlObj->url = $request->input('url');
-                $tweetsUrlObj->save();
-                return redirect('admin/dashboard')->with('message', 'Successfully submitted!');
+                $objToSave = new TweetsUrl();
+            }
+
+            if(is_object($objToSave)) {
+              $objToSave->url = $request->input('url');
+              $objToSave->save();
+              return redirect('admin/dashboard')->with('message', 'Successfully submitted!');
+            } else {
+              return redirect('admin/dashboard')->with('message', 'Incorrect object. Try again.');
             }
         } catch(\Illuminate\Database\QueryException $e) {
             return redirect('admin/dashboard')->with('message', $e->getMessage());
