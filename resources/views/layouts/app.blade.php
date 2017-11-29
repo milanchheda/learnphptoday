@@ -52,10 +52,7 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script>
       window.addEventListener('load',function(){
-      if(window.location.pathname =="/register/" )
-        {
-          ga('send','event','Learn PHP Today','referrer',document.referrer)
-        }
+        ga('send','event','Learn PHP Today','referrer',document.referrer)
       });
     </script>
 </body>
