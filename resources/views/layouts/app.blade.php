@@ -31,11 +31,11 @@
     }
     ?>
 </head>
-<body class="bg-grey-lightest font-sans font-normal">
+<body class="bg-grey-lighter font-sans font-normal">
     <div id="app">
-        <nav class="flex items-center justify-between flex-wrap bg-red-lighter p-6">
+        <nav class="flex items-center justify-between flex-wrap bg-grey p-6">
           <div class="flex items-center flex-no-shrink text-white mr-6">
-            <a class="text-white no-underline" href='/'><span class="font-semibold text-xl tracking-tight">Learn PHP Today</span></a>
+            <a class="text-white no-underline" href='/'><span class="font-semibold text-2xl tracking-tight">Learn PHP Today</span></a>
           </div>
           <div class="block lg:hidden">
             <button class="flex items-center px-3 py-2 border rounded text-red-dark border-red-dark hover:text-white hover:border-black">
@@ -43,11 +43,11 @@
             </button>
           </div>
           <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-            <div class="text-base lg:flex-grow">
-              <a href="/video-tutorials" class="block cursor-pointer mt-4 lg:inline-block lg:mt-0 hover:text-white mr-4 {{ Request::is('video-tutorials') ? 'text-white' : 'text-red-dark' }}">
+            <div class="text-lg lg:flex-grow">
+              <a href="/video-tutorials" class="block font-semibold no-underline cursor-pointer mt-4 lg:inline-block lg:mt-0 hover:text-white mr-4 {{ Request::is('video-tutorials') ? 'text-white' : 'text-red' }}">
                 Videos
               </a>
-              <a href="/tweet-snippets" class="block cursor-pointer mt-4 lg:inline-block lg:mt-0 hover:text-white mr-4 {{ Request::is('tweet-snippets') ? 'text-white' : 'text-red-dark' }}">
+              <a href="/tweet-snippets" class="block font-semibold no-underline cursor-pointer mt-4 lg:inline-block lg:mt-0 hover:text-white mr-4 {{ Request::is('tweet-snippets') ? 'text-white' : 'text-red' }}">
                 Tweet Snippets
               </a>
             </div>

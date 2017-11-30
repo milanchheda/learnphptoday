@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('title', 'Home | Learn PHP Today')
 @section('content')
-    <div class="bg-pink-lightest border-t-2 border-solid border-red">
-    <div class="text-red-dark py-4 ml-4 mr-4 clearfix">
+    <div class="bg-grey-lightest border-t-2 border-solid border-grey">
+    <div class="text-red-dark py-4 ml-4 mr-4 border-b border-dashed border-grey clearfix">
         <h3 class="float-left">Tweet Snippets</h3>
         <div class="float-right mr-2"><a href='tweet-snippets' class="text-red-dark text-base">View all</a></div>
     </div>
@@ -42,8 +42,8 @@
         @endforeach
     </div>
     </div>
-    <div class="bg-red-lightest border-t-2 border-solid border-red pb-8">
-        <div class="text-red-dark py-4 ml-4 mr-4 clearfix">
+    <div class="bg-grey-lightest border-t-2 border-solid border-grey pb-8">
+        <div class="text-red-dark py-4 ml-4 mr-4 border-b border-dashed border-grey clearfix">
             <h3 class="float-left">Video Tutorials</h3>
             <div class="float-right mr-2"><a href='video-tutorials' class="text-red-dark text-base">View all</a></div>
         </div>

@@ -178,7 +178,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Thujohn\Twitter\TwitterServiceProvider::class,
         Ipunkt\LaravelAnalytics\AnalyticsServiceProvider::class,
-
+        Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
     ],
 
     /*
@@ -229,6 +229,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Twitter' => Thujohn\Twitter\Facades\Twitter::class,
         'Analytics' => Ipunkt\LaravelAnalytics\AnalyticsFacade::class,
+        'SEO' => Artesaos\SEOTools\Facades\SEOTools::class,
     ],
 
 ];

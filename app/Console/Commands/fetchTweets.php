@@ -2,10 +2,10 @@
 
 namespace App\Console\Commands;
 
-use Twitter;
 use App\TweetData;
 use App\TweetsUrl;
 use Illuminate\Console\Command;
+use Thujohn\Twitter\Facades\Twitter;
 
 class fetchTweets extends Command
 {

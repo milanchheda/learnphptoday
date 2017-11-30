@@ -1,25 +1,39 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="text-red-dark ml-4 mr-4 my-4 clearfix">
-                    <h3 class="float-left">Dashboard</h3>
-                </div>
+<div class="flex flex-wrap pt-4">
                 @if(session('message'))
-                    <div class="form-group">
-                        <div class="alert alert-success message-container">{{ session('message') }}</div>
+                    <div class="bg-teal-lightest border-t-4 border-teal rounded-b text-teal-darkest px-4 py-3 shadow-md mx-4" role="alert">
+                      <div class="flex">
+                        <div>
+                          <p class="font-bold">Success!</p>
+                          <p class="text-sm">{{ session('message') }}</p>
+                        </div>
+                      </div>
                     </div>
                 @endif
-                <div class="panel-body">
-                    <ul class="list-reset flex border-b" id="tabs-container">
-                        <li class="-mb-px mr-1">
+                @if(session('error'))
+                    <div id="errorMessageContainer" role="alert" class="mx-4">
+                      <div class="bg-red text-white font-bold rounded-t px-4 py-2">
+                        Error
+                      </div>
+                      <div class="border border-t-0 border-red-light rounded-b bg-red-lightest px-4 py-3 text-red-dark">
+                        <p>{{ session('error') }}</p>
+                      </div>
+                    </div>
+                @endif
+
+                <div class="w-full">
+                    <h3 class="text-red-dark ml-4 mr-4 my-4 clearfix">Dashboard</h3>
+                    <ul class="list-reset flex border-b pl-4" id="tabs-container">
+                        <li class="-mb-px mr-1 active">
                             <a href="#" data-target="#tweets" class="bg-white inline-block border-l border-t border-r rounded rounded-t py-2 px-4 text-blue-dark" id="contacts_tab" data-toggle="tabajax" rel="tooltip"> Add Tweets </a>
                         </li>
                         <li class="mr-1">
                             <a href="#" data-target="#youtube" class="bg-white inline-block py-2 px-4 text-blue hover:text-blue-darker" id="friends_list_tab" data-toggle="tabajax" rel="tooltip"> Add YouTube Videos</a>
+                        </li>
+                        <li class="mr-1">
+                            <a href="#" data-target="#fetchTweetsAndVideos" class="bg-white inline-block py-2 px-4 text-blue hover:text-blue-darker" id="friends_list_tab" data-toggle="tabajax" rel="tooltip">Fetch Tweets And Videos</a>
                         </li>
                     </ul>
                     <div class="tab-content">
@@ -44,7 +58,7 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="tab-pane" id="youtube">
+                        <div class="tab-pane hidden" id="youtube">
                             <form class="px-8 pt-6 pb-8 mb-4" method="post" action="/admin/post-url">
                                 {!! csrf_field() !!}
                                 <input type="hidden" name="url_type" value="youtube" />
@@ -65,10 +79,17 @@
                                 </div>
                             </form>
                         </div>
+                        <div class="tab-pane hidden" id="fetchTweetsAndVideos">
+                            <form class="px-8 pt-6 pb-8 mb-4" method="post" action="/admin/post-url">
+                                {!! csrf_field() !!}
+                                <input type="hidden" name="url_type" value="fetchTweetsAndVideos" />
+                                <div class="mb-4">
+                                    <button class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded" name="fetchTweets" value="fetchTweets">Fetch Tweets</button>
+                                    <button class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded" name="fetchVideos" value="fetchVideos">Fetch Videos</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
 @endsection
