@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Video Tutorials Page')
+@section('title', 'Video Tutorials | Learn PHP Today')
 @section('content')
 	<div class="flex flex-wrap border-t-2 border-solid border-red">
 	    @foreach($videoData as $video)

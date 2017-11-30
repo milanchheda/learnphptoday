@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Homepage')
+@section('title', 'Home | Learn PHP Today')
 @section('content')
     <div class="bg-pink-lightest border-t-2 border-solid border-red">
     <div class="text-red-dark py-4 ml-4 mr-4 clearfix">
