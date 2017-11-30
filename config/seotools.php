@@ -42,7 +42,7 @@ return [
          * The default values to be used by the twitter cards generator.
          */
         'defaults' => [
-          'card'        => 'summary_large_image',
+          'card'        => 'summary',
           'title'        => 'Learn PHP Today',
           'description'        => 'A curated top-rated video tutorials posted on YouTube & tweet snippets posted on Twitter.',
           'site'        => '@learn_php_today',
