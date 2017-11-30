@@ -34,7 +34,7 @@ return [
             'url'         => null, // Set null for using Url::current(), set false to total remove
             'type'        => false,
             'site_name'   => false,
-            'images'      => [env('APP_URL') . '/public/images/homepage.png'],
+            'images'      => [env('APP_URL') . '/images/homepage.png'],
         ],
     ],
     'twitter' => [
