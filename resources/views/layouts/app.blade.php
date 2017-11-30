@@ -7,15 +7,25 @@
     {!! SEO::generate(true) !!}
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
     <!-- Styles -->
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     <?php
     if(env('APP_ENV') != 'local') {
     ?>
         {!! Analytics::render() !!}
+          <!-- Global site tag (gtag.js) - Google Analytics -->
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-100841850-1"></script>
+          <script>
+              window.dataLayer = window.dataLayer || [];
+
+              function gtag() {
+                  dataLayer.push(arguments);
+              }
+
+              gtag('js', new Date());
+
+              gtag('config', 'UA-100841850-1');
+          </script>
     <?php
     }
     ?>

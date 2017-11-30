@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Tweet Snippets Page')
 @section('content')
 	<div class="flex flex-wrap border-t-2 border-solid border-red">
 	    @foreach($tweetData as $tweet)
