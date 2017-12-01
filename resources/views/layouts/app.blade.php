@@ -61,10 +61,16 @@
     <!-- Scripts -->
     <script src="//twemoji.maxcdn.com/2/twemoji.min.js?2.3.0"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+    <?php
+    if(env('APP_ENV') != 'local' && !Request::is('admin/*')) {
+    ?>
     <script>
       window.addEventListener('load',function(){
         ga('send','event','Learn PHP Today','referrer',document.referrer)
       });
     </script>
+    <?php
+    }
+    ?>
 </body>
 </html>
