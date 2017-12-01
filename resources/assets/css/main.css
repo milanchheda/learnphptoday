@@ -1,3 +1,39 @@
+@import "~venobox/venobox/venobox.css";
+.vbox-overlay {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+.vbox-close {
+    background: #f9acaa !important;
+    color: #333 !important;
+    border-radius: 50%;
+    height: 50px;
+    font-size: 45px !important;
+    padding: 0 !important;
+}
+.custom-pagination ul.pagination {
+    list-style: none;
+    list-style-type: none;
+    display: flex;
+}
+.custom-pagination ul.pagination li {
+  margin-right: 20px;
+}
+.custom-pagination ul.pagination li a {
+  color: #cc1f1a;
+}
+.custom-pagination ul.pagination li.disabled {
+  color: #999;
+}
+img.emoji {
+   height: 1em;
+   width: 1em;
+   margin: 0 .05em 0 .1em;
+   vertical-align: -0.1em;
+}
+.tweetText a {
+  color: #e3342f !important;
+}
+
 /**
  * This injects Tailwind's base styles, which is a combination of
  * Normalize.css and some additional base styles.
@@ -43,39 +79,3 @@
  * @import "utilities/background-patterns";
  * @import "utilities/skew-transforms";
  */
-
-@import "~venobox/venobox/venobox.css";
-.vbox-overlay {
-	background-color: rgba(255, 255, 255, 0.9) !important;
-}
-.vbox-close {
-    background: #f9acaa !important;
-    color: #333 !important;
-    border-radius: 50%;
-    height: 50px;
-    font-size: 45px !important;
-    padding: 0 !important;
-}
-.custom-pagination ul.pagination {
-    list-style: none;
-    list-style-type: none;
-    display: flex;
-}
-.custom-pagination ul.pagination li {
-	margin-right: 20px;
-}
-.custom-pagination ul.pagination li a {
-	color: #cc1f1a;
-}
-.custom-pagination ul.pagination li.disabled {
-	color: #999;
-}
-img.emoji {
-   height: 1em;
-   width: 1em;
-   margin: 0 .05em 0 .1em;
-   vertical-align: -0.1em;
-}
-.tweetText a {
-	color: #e3342f !important;
-}
