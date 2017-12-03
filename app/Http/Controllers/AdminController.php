@@ -3,10 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\VideoUrl;
+use App\TweetData;
 use App\TweetsUrl;
+use App\VideosData;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Artisan;
+use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class AdminController extends Controller
 {
@@ -43,4 +48,42 @@ class AdminController extends Controller
             return redirect('admin/dashboard')->with('error', $e->getMessage());
         }
   	}
+
+    public function showTweets() {
+      $allTweets = TweetsUrl::orderBy('id', 'desc')->simplePaginate(20);
+      $allData = array('tweetData' => $allTweets);
+      return View::make('admin.tweets')->with($allData);
+    }
+
+    public function showVideos() {
+      $allVideos = VideoUrl::orderBy('id', 'desc')->simplePaginate(20);
+      $allData = array('videoData' => $allVideos);
+      return View::make('admin.videos')->with($allData);
+    }
+
+    public function deleteTweets($id) {
+      try {
+        $allTweets = TweetsUrl::findOrFail($id);
+        $tweetsDataObj = TweetData::where('tweet_url_id', $id);
+        if(!empty($tweetsDataObj))
+          $tweetsDataObj->delete();
+        $allTweets->delete();
+        return redirect('admin/tweets')->with('message', 'Sucessfully deleted ' . $id);
+      } catch(ModelNotFoundException $e) {
+        return redirect('admin/tweets')->with('message', $e->getMessage());
+      }
+    }
+
+    public function deleteVideos($id) {
+      try {
+        $allVideos = VideoUrl::findOrFail($id);
+        $videoDataObj = VideosData::where('video_id', $id);
+        if(!empty($videoDataObj))
+          $videoDataObj->delete();
+        $allVideos->delete();
+        return redirect('admin/videos')->with('message', 'Sucessfully deleted ' . $id);
+      } catch(ModelNotFoundException $e) {
+        return redirect('admin/videos')->with('message', $e->getMessage());
+      }
+    }
 }

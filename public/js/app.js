@@ -993,6 +993,10 @@ var app = new Vue({
   el: '#app'
 });
 
+$("#toggleMenu").on('click', function () {
+  $("#menu-container").slideToggle();
+});
+
 $(document).ready(function () {
   $('.venobox').venobox();
 

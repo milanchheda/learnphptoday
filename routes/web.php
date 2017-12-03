@@ -23,6 +23,10 @@ Route::group(array('prefix'=>'admin','middleware' => ['auth']), function ()
 	Route::post('/post-url','AdminController@store');
 	Route::get('/', 'AdminController@index');
 	Route::get('dashboard', 'AdminController@index');
+	Route::get('tweets', 'AdminController@showTweets');
+	Route::get('tweets/delete/{id}', 'AdminController@deleteTweets');
+	Route::get('videos', 'AdminController@showVideos');
+	Route::get('videos/delete/{id}', 'AdminController@deleteVideos');
 });
 
 Route::get('/video-tutorials', 'HomeController@fetchVideos')->name('home');
