@@ -16,7 +16,7 @@
 	            <div class="px-3 py-4 flex">
 	            <div>
 	                <div class="text-black font-bold text-base mb-2">
-                    <a class="text-red no-underline" target="_BLANK" href="{{ $videoObj->author_url }}">{{ $videoObj->author_name }}</a>
+                    <a class="text-purple no-underline" target="_BLANK" href="{{ $videoObj->author_url }}">{{ $videoObj->author_name }}</a>
                   </div>
 	                <p class="text-grey-darkest text-sm">{{ $videoObj->title }}</p>
 	            </div>
