@@ -16,6 +16,8 @@ Route::get('/', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/video-tutorials', 'HomeController@fetchVideos')->name('video-tutorials');
+Route::get('/tweet-snippets', 'HomeController@fetchTweets')->name('tweet-snippets');
 
 //Admin routes
 Route::group(array('prefix'=>'admin','middleware' => ['auth']), function ()
@@ -28,6 +30,3 @@ Route::group(array('prefix'=>'admin','middleware' => ['auth']), function ()
 	Route::get('videos', 'AdminController@showVideos');
 	Route::get('videos/delete/{id}', 'AdminController@deleteVideos');
 });
-
-Route::get('/video-tutorials', 'HomeController@fetchVideos')->name('home');
-Route::get('/tweet-snippets', 'HomeController@fetchTweets')->name('home');

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Video Tutorials | Learn PHP Today')
 @section('content')
-	<div class="flex flex-wrap border-t-2 border-solid border-red">
+	<div class="flex flex-wrap">
 	    @foreach($videoData as $video)
 	    <?php
 	        $videoObj = json_decode($video['data']);

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Tweet Snippets | Learn PHP Today')
 @section('content')
-	<div class="flex flex-wrap border-t-2 border-solid border-red">
+	<div class="flex flex-wrap">
 	    @foreach($tweetData as $tweet)
         <?php
             $tweetObj = json_decode($tweet['data']);

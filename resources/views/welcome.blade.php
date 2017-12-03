@@ -1,10 +1,10 @@
 @extends('layouts.app')
 @section('title', 'Home | Learn PHP Today')
 @section('content')
-    <div class="bg-grey-lightest border-t-2 border-solid border-grey">
-    <div class="text-red-dark py-4 ml-4 mr-4 border-b border-dashed border-grey clearfix">
-        <h3 class="float-left">Tweet Snippets</h3>
-        <div class="float-right mr-2"><a href='tweet-snippets' class="text-red-dark text-base">View all</a></div>
+    <div class="border-t-2 border-solid border-purple">
+    <div class="text-red  border-b border-dashed border-purple clearfix">
+        <h3 class="float-left py-4 ml-4 mr-4 text-2xl text-purple-darker">Tweet Snippets</h3>
+        <div class="float-right py-4 ml-4 mr-4"><a href='tweet-snippets' class="text-purple-darker text-lg font-semibold no-underline">View all</a></div>
     </div>
     <div class="flex flex-wrap pb-8">
         @foreach($tweetData as $tweet)
@@ -42,10 +42,10 @@
         @endforeach
     </div>
     </div>
-    <div class="bg-grey-lightest border-t-2 border-solid border-grey pb-8">
-        <div class="text-red-dark py-4 ml-4 mr-4 border-b border-dashed border-grey clearfix">
-            <h3 class="float-left">Video Tutorials</h3>
-            <div class="float-right mr-2"><a href='video-tutorials' class="text-red-dark text-base">View all</a></div>
+    <div class=" border-t-2 border-solid border-purple pb-8">
+        <div class="text-purple-darker border-b border-dashed border-purple clearfix">
+            <h3 class="float-left py-4 ml-4 mr-4">Video Tutorials</h3>
+            <div class="float-right py-4 ml-4 mr-4"><a href='video-tutorials' class="text-purple-darker text-lg font-semibold no-underline">View all</a></div>
         </div>
         <div class="flex flex-wrap">
             @foreach($videoData as $video)
