@@ -21,12 +21,12 @@ const app = new Vue({
     el: '#app'
 });
 
-$("#toggleMenu").on('click', function(){
-  $("#menu-container").slideToggle();
-});
-
 $(document).ready(function(){
   $('.venobox').venobox();
+
+  $("#toggleMenu").on('click', function(){
+    $("#menu-container").slideToggle();
+  });
 
 	$('[data-toggle="tabajax"]').click(function(e) {
 		$(".tab-pane").hide();
